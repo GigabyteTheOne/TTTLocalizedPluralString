@@ -449,7 +449,7 @@ NSString * TTTLocalizedPluralStringKeyForCountAndSingularNounForLanguage(NSUInte
     NSString *pluralRule = nil;
 
     // Because -hasPrefix is being used here, any three-letter ISO 639-2/3 codes must come before two-letter ISO 639-1 codes in order to prevent, for instance, Konkani (kok) from having Korean (ko) pluralization applied
-    else if ([languageCode hasPrefix:@"ar"]) {
+    if ([languageCode hasPrefix:@"ar"]) {
         pluralRule = TTTArabicPluralRuleForCount(count);
     } else if ([languageCode hasPrefix:@"ca"]) {
         pluralRule = TTTCatalanPluralRuleForCount(count);
